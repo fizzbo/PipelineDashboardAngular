@@ -1,0 +1,13 @@
+// IDE and OS files
+.DS_Store
+.idea
+
+// NPM and Bower Dependencies
+.bower
+bower_components
+node_modules
+
+// Generated Files
+logs
+dist
+*.log

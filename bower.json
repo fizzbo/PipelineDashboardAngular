@@ -1,0 +1,33 @@
+{
+    "name": "PipelineDashboardAngular",
+    "description": "Development Dashboard",
+    "version": "0.0.1",
+    "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "angular": "latest",
+        "angular-route": "latest",
+        "angular-resource": "latest",
+        "angular-sanitize": "latest",
+        "angular-touch": "latest",
+        "angular-bootstrap": "latest"
+    },
+    "devDependencies": {
+        "angular-mocks": "latest"
+    },
+    "homepage": "https://github.com/DashboardHub/PipelineDashboardAngular",
+    "exportsOverride": {
+        "jquery": {},
+        "bootstrap": {
+            "css": "dist/css/bootstrap.min.css",
+            "fonts": "fonts/*"
+        },
+        "font-awesome": {
+            "css": "css/font-awesome.min.css",
+            "fonts": "fonts/*"
+        }
+    },
+    "resolutions": {
+        "angular": "1.3.14"
+    }
+}

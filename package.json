@@ -1,0 +1,36 @@
+{
+    "name": "PipelineDashboardAngular",
+    "version": "0.0.1",
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/DashboardHub/PipelineDashboardAngular"
+    },
+    "scripts": {
+        "start": "node server.js",
+        "test": "grunt test",
+        "postinstall": "bower install"
+    },
+    "dependencies": {
+        "bower": "latest",
+        "grunt": "latest",
+        "express": "latest",
+        "ejs": "*",
+        "connect-livereload": "latest"
+    },
+    "devDependencies": {
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-copy": "latest",
+        "grunt-contrib-less": "latest",
+        "grunt-express-server": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-watch": "latest",
+
+        "grunt-karma": "latest",
+        "karma-jasmine": "^0.2.0",
+        "karma-phantomjs-launcher": "latest",
+        "karma-spec-reporter": "latest",
+        "karma-coverage-0.11": "^0.1.1",
+
+        "load-grunt-tasks": "latest"
+    }
+}
