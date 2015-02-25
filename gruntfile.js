@@ -137,7 +137,7 @@ module.exports = function (grunt) {
                 }
             },
             css: {
-                files: 'design/less/**/*.less',
+                files: 'less/**/*.less',
                 tasks: [ 'less:dev' ],
                 options: {
                     livereload: true
