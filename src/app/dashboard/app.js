@@ -2,30 +2,20 @@ angular.module('package.dashboard', ['ngRoute', 'controller.dashboard', 'service
     .config(['$routeProvider', function ($routes) {
         $routes
             .when('/dashboard', {
-                controller: "DashboardCtrl", controllerAs: "dashboard", templateUrl: 'templates/app/dashboard/dashboard.html',
+                controller: "DashboardCtrl",
+                controllerAs: "dashboard",
+                templateUrl: 'templates/app/dashboard/dashboard.html',
                 resolve: {
-                    eventData: ['_github', '$route', function (github, $route) {
-                        github.setOwner($route.current.params.owner || '');
-                        github.setRepo($route.current.params.repo || '');
-
+                    eventData: ['_github', function (github) {
                         return github.getEvents(100).$promise;
                     }],
-                    issueData: ['_github', '$route', function (github, $route) {
-                        github.setOwner($route.current.params.owner || '');
-                        github.setRepo($route.current.params.repo || '');
-
+                    issueData: ['_github', function (github) {
                         return github.getIssues(100).$promise;
                     }],
-                    branchData: ['_github', '$route', function (github, $route) {
-                        github.setOwner($route.current.params.owner || '');
-                        github.setRepo($route.current.params.repo || '');
-
+                    branchData: ['_github', function (github) {
                         return github.getBranches(100).$promise;
                     }],
-                    pullData: ['_github', '$route', function (github, $route) {
-                        github.setOwner($route.current.params.owner || '');
-                        github.setRepo($route.current.params.repo || '');
-
+                    pullData: ['_github', function (github) {
                         return github.getPullRequests(100).$promise;
                     }]
                 }

@@ -1,17 +1,10 @@
-angular.module('service.github', ['ngResource'])
-    .service('_github', ['$resource', function ($resource) {
-        var owner, repo;
-
-        this.setOwner = function (newOwner) {
-            owner = newOwner;
-        };
+angular.module('service.github', ['ngResource', 'ngRoute'])
+    .service('_github', ['$resource', '$route', function ($resource, $route) {
+        var owner = $route.current.params.owner || '',
+            repo = $route.current.params.repo || '';
 
         this.getOwner = function () {
             return owner;
-        };
-
-        this.setRepo = function (newRepo) {
-            repo = newRepo;
         };
 
         this.getRepo = function () {
