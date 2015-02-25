@@ -20,6 +20,6 @@ angular.module('pipeline', ['package.dashboard', 'ui.bootstrap'])
             if (secs < 86400) return Math.floor(secs / 3600) + " hours ago";
             if (secs < 172800) return Math.floor(secs / 86400) + " day ago";
             if (secs < 604800) return Math.floor(secs / 86400) + " days ago";
-            return date.toDateString();
+            return startDate.toDateString();
         };
     });
