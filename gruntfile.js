@@ -5,6 +5,9 @@ module.exports = function (grunt) {
         meta: {
             modules: ''
         },
+        clean: {
+            logs: 'logs/karma'
+        },
         jshint: {
             files: ['gruntfile.js', 'src/**/*.js', 'tests/**/*.spec.js'],
             options: {
@@ -93,6 +96,10 @@ module.exports = function (grunt) {
                 files: [
                     { src: ['bower_components/angular/angular.js'], watched: false },
                     { src: ['bower_components/angular-mocks/angular-mocks.js'], watched: false },
+                    { src: ['bower_components/angular-resource/angular-resource.js'], watched: false },
+                    { src: ['bower_components/angular-route/angular-route.js'], watched: false },
+                    { src: ['bower_components/angular-sanitize/angular-sanitize.js'], watched: false },
+                    { src: ['bower_components/angular-touch/angular-touch.js'], watched: false },
                     { src: ['bower_components/angular-bootstrap/angular-bootstrap.js'], watched: false },
                     { src: ['src/**/*.js'] },
                     { src: ['tests/**/*.spec.js'] }
@@ -102,7 +109,7 @@ module.exports = function (grunt) {
                 runnerPort: 9999,
                 singleRun: true,
                 reporters: ['spec', 'coverage'],
-                preprocessors: { 'javascript/src/**/*.js': ['coverage'] },
+                preprocessors: { 'src/**/*.js': ['coverage'] },
                 coverageReporter: {
                     type: 'lcov',
                     dir: 'logs/karma'
@@ -148,7 +155,7 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
-    grunt.registerTask('test', ['karma:unit']);
+    grunt.registerTask('test', ['clean', 'karma:unit']);
 
     grunt.registerTask('default', ['jshint', 'concat', 'less:dev', 'copy', 'test', 'express:dev', 'watch']);
 };

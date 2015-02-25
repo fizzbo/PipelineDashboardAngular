@@ -18,6 +18,7 @@
         "connect-livereload": "latest"
     },
     "devDependencies": {
+        "grunt-contrib-clean": "latest",
         "grunt-contrib-concat": "latest",
         "grunt-contrib-copy": "latest",
         "grunt-contrib-less": "latest",
