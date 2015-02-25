@@ -1,4 +1,4 @@
-angular.module('pipeline', ['package.dashboard', 'ui.bootstrap'])
+angular.module('pipeline', ['package.layout', 'package.dashboard', 'ui.bootstrap'])
 
     .config(['$locationProvider', function ($location) {
         $location.html5Mode(true);
